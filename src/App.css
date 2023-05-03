@@ -1,38 +1,375 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header_bg {
+  background: url(./assets/images/png/header_bg.png) no-repeat;
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.z_0 {
+  z-index: 0;
+}
+
+.header_img {
+  position: absolute;
+  bottom: -70px;
+  max-width: 851px;
+  height: 900px;
+  right: 0;
+}
+
+/* story */
+.story_box {
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(50px);
+  border-radius: 40px;
+  padding: 45px 69px 68px 65px;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+.slick-center {
+  transform: scale(1.2);
+}
+
+.super {
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 92.04%);
+}
+
+.super .slick-track {
+  padding-top: 40px;
+}
+
+.super .slick-center p {
+  display: block !important;
+}
+
+
+/* Nav bar */
+nav ul li a:hover {
+  color: #ffffff;
+}
+
+nav ul li a {
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  background: #F4E803;
+  border-radius: 5.5px;
+  width: 0;
+  height: 7px;
+  bottom: -31px;
+  left: 50%;
+  transition: .4s;
+}
+
+nav ul li a:hover::after {
+  content: "";
+  width: 100%;
+  transform: translateX(-50%);
+}
+
+.stroke_white path {
+  stroke: #FFFFFF;
+}
+
+.z-index-50 {
+  z-index: 50;
+}
+
+.nav_btn {
+  font-size: 30px;
+}
+
+.connect_btn {
+  padding: 10px 24px;
+  background: linear-gradient(180deg, #EC0010 0%, #EC0010 100%);
+  box-shadow: 2px 2px 0px #F4E803;
+  border-radius: 24px;
+  border: none;
+  transition: all .15s ease-in-out;
+}
+
+
+.connect_btn:active {
+  box-shadow: 2px 5px 0px #f4e803e9;
+  transform: translateY(4px);
+}
+
+/* slider */
+.layer {
+  position: absolute;
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 92.04%);
+  width: 50%;
+  height: 100%;
+  z-index: 5;
+}
+
+.layer2 {
+  position: absolute;
+  right: 0;
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 92.04%);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  width: 50%;
+  height: 100%;
+  z-index: 5;
+}
+
+.story_wing {
+  position: absolute;
+  top: -42%;
+  left: 0;
+  width: 20%;
+}
+
+/* timeline */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border: 2px dashed #FFFFFF;
+  top: 0;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -3px;
+  margin-top: 20px;
+}
+
+.timelinecontainer {
+  padding-bottom: 100px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.timelinecontainer::after {
+  content: "";
+  position: absolute;
+  right: -24px;
+  top: 0px;
+  border-radius: 50%;
+  z-index: 1;
+  width: 50px;
+  height: 47.98px;
+  background: linear-gradient(180deg, #F4E803 0%, #F4A003 69.27%);
+  background-image: url(./assets/images/svg/timeline_img.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 0px 52px rgba(244, 232, 3, 0.61);
+}
+
+.left {
+  left: 0;
+  padding-right: 76px;
+}
+
+.right {
+  left: 50%;
+  padding-left: 76px;
+}
+
+.right::after {
+  left: -28px;
+}
+
+.content {
+  padding: 20px 30px;
+  background-color: transparent;
+  position: relative;
+  border-radius: 6px;
+}
+
+.timeline_wing {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.timeline_wing2 {
+  position: absolute;
+  right: 0;
+  bottom: 20%;
+}
+
+/* team */
+.team_h {
+  height: 370px;
+}
+
+.team_wing {
+  position: absolute;
+  left: 0;
+  top: -30%;
+}
+
+/* FAQ */
+.accordion-button {
+  padding: 22px 25px !important;
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: left;
+  background: #151515 !important;
+  border: 1px solid #393939 !important;
+  border-radius: 5px !important;
+  margin-bottom: 16px;
+
+}
+
+.accordion-button:not(.collapsed) {
+  color: #ffffff;
+}
+
+.accordion-button:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.accordion {
+  --bs-accordion-color: #ffffff !important;
+  --bs-accordion-bg: #151515 !important;
+  --bs-accordion-active-bg: #151515 !important;
+  --bs-accordion-border-color: none !important;
+  --bs-accordion-btn-focus-border-color: #000000 !important;
+}
+
+.accordion-item {
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.accordion-button::after {
+  background-image: url(./assets/images/svg/down_arrow.svg) !important;
+}
+
+.wing1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20%;
+}
+
+.wing2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 20%;
+}
+
+/* footer */
+.mw_300 {
+  max-width: 324px;
+}
+
+.footer_icon {
+  transition: .3s;
+}
+
+.footer_icon:hover {
+  transform: translateY(-5px);
+}
+
+.top_arrow {
+  max-width: 100px;
+  z-index: 20;
+  position: relative;
+}
+
+/* Media queries */
+
+/* custom container media query */
+@media (min-width:1200px) and (max-width:1920px) {
+  .myContainer {
+    max-width: 1320px !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (min-width:1800px) {
+  .min_vh100 {
+    min-height: 100vh;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width:992px) {
+  .myNav {
+    position: absolute;
+    left: -100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background: radial-gradient(50% 50% at 50% 50%, rgb(20, 22, 77) 0%, #010223 100%);
+    height: 100vh;
+    width: 100%;
+    transition: all 300ms linear;
+    z-index: 50;
+  }
+
+  .myNav li a {
+    font-size: 20px;
+  }
+
+  .showNav {
+    left: 0;
+  }
+
+  .nav_btn {
+    display: block;
+  }
+    .translate-middle-y {
+      transform: translateY(-35%) !important;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 31px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .timelinecontainer {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
   }
+
+  .left::after,
+  .right::after {
+    left: 5px;
+  }
+
+  .right {
+    left: 0%;
+  }
+
+}
+
+@media (max-width:576px) {
+  .story_box {
+    padding: 33px 20px 29px 16px;
+  }
+
+  .header_img {
+    height: 550px;
+  }
+
+  
 }
